@@ -15,8 +15,19 @@ views:
       - device_tracker.fluffy
       #- device_tracker.maritzas_iphone
     cards:
+      - type: entities
+        title: Time
+        show_header_toggle: true
+        entities:
+          - sensor.zulu_time
+          - sensor.est_time
+          - sensor.pst_time
       - type: weather-forecast
         entity: weather.dark_sky
+
+  - title: climate
+    icon: mdi:nest-thermostat
+    cards:
       - type: custom:thermostat-card
         title: North Nest
         entity: climate.north_nest
@@ -47,3 +58,44 @@ views:
             'Heating': 'heat'
           attribute: operation_mode
         ambient_temperature: sensor.489_climate_kingsbridge_ambient_temp
+        
+  - title: weather
+    icon: mdi:weather-cloudy
+    cards:
+      - type: iframe
+        url: https://embed.windy.com/embed2.html?lat=26.385&lon=-80.103&zoom=10&level=surface&overlay=wind&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=26.385&detailLon=-80.103&metricWind=default&metricTemp=default
+        aspect_ratio: 75%
+        
+  - title: security
+    icon: mdi:cctv
+    cards:
+      - type: picture-entity
+        title: Front Door
+        entity: camera.front_door
+        camera_image: camera.front_door
+        show_info: true
+        tap_action: dialog
+      - type: picture-entity
+        title: Pool
+        entity: camera.pool
+        camera_image: camera.pool
+        show_info: true
+        tap_action: dialog
+      - type: picture-entity
+        title: DogCam
+        entity: camera.dogcam
+        camera_image: camera.dogcam
+        show_info: true
+        tap_action: dialog
+      - type: picture-entity
+        title: Park
+        entity: camera.park
+        camera_image: camera.park
+        show_info: true
+        tap_action: dialog
+      - type: picture-entity
+        title: Garage
+        entity: camera.garage
+        camera_image: camera.garage
+        show_info: true
+        tap_action: dialog        
