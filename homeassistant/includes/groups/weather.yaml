@@ -8,18 +8,9 @@ weather:
   view: yes
   icon: mdi:weather-cloudy
   entities:
-    - group.wunderground
-    - group.weather_card_forecast
     - group.kbct_metar
     - group.kobe_metar
     - group.climate_cameras
-
-wunderground:
-  name: Weather
-  view: no
-  entities:
-    - sensor.pws_weather_1h
-    - sensor.pws_weather_1d
 
 kbct_metar:
   name: KBCT Metar

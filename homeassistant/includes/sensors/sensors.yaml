@@ -140,19 +140,6 @@
   time_zone: America/Los_Angeles
   name: PST Time
 
-- platform: wunderground
-  api_key: !secret wunderground_api_key
-  monitored_conditions:
-    - alerts
-    - temp_f
-    - dewpoint_f
-    - pressure_in
-    - UV
-    - wind_string
-    - weather
-    - weather_1h
-    - weather_1d
-
 ####################################################
 #                                                  #
 #              HOME ASSISTANT UPTIME               #
