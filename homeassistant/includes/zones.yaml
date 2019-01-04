@@ -1,0 +1,36 @@
+############################################################
+#
+# Home Assistant - Zones
+#
+############################################################
+
+- name: Home
+  latitude: !secret home_lat
+  longitude: !secret home_lon
+  radius: 100
+  icon: mdi:castle
+- name: 489
+  latitude: !secret 489_lat
+  longitude: !secret 489_lon
+  radius: 100
+  icon: mdi:home-currency-usd
+- name: Work
+  latitude: !secret work_lat
+  longitude: !secret work_lon
+  radius: 100
+  icon: mdi:briefcase
+- name: Daves Parents
+  latitude: !secret drents_lat
+  longitude: !secret drents_lon
+  radius: 100
+  icon: mdi:human-male-female
+- name: Tatis Parents
+  latitude: !secret trents_lat
+  longitude: !secret trents_lon
+  radius: 100
+  icon: mdi:human-male-female
+- name: KBCT
+  latitude: !secret kbct_lat
+  longitude: !secret kbct_lon
+  radius: 100
+  icon: mdi:airport

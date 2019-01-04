@@ -1,0 +1,28 @@
+sensor.kbct_metar_altim_in_hg:
+  friendly_name: KBCT Alt.
+sensor.kbct_metar_cloud_base_ft_agl:
+  friendly_name: KBCT Cloud Base
+sensor.kbct_metar_dewpoint_c:
+  friendly_name: KBCT Dewpoint
+sensor.kbct_metar_elevation_m:
+  friendly_name: KBCT Elevation
+sensor.kbct_metar_flight_category:
+  friendly_name: KBCT Flight Category
+sensor.kbct_metar_metar_type:
+  friendly_name: KBCT Metar Type
+sensor.kbct_metar_observation_time:
+  friendly_name: KBCT Obsv. Time
+sensor.kbct_metar_sky_cover:
+  friendly_name: KBCT Sky Cover
+sensor.kbct_metar_temp_c:
+  friendly_name: KBCT Temp
+sensor.kbct_metar_visibility_statute_mi:
+  friendly_name: KBCT Visibility
+sensor.kbct_metar_wind_dir_degrees:
+  friendly_name: KBCT Wind Dir
+sensor.kbct_metar_wind_speed_kt:
+  friendly_name: KBCT Wind Speed
+sensor.kbct_metar_wx_string:
+  friendly_name: KBCT WX
+sensor.ha_db_size:
+  icon: mdi:database

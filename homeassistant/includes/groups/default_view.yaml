@@ -1,0 +1,64 @@
+############################################################
+#
+# Home Assistant - Groups - Default View
+#
+############################################################
+
+default_view:
+  view: yes
+  icon: mdi:home-assistant
+  entities:
+    - device_tracker.daves_iphone
+    - device_tracker.tatis_iphone
+    - device_tracker.stella
+    - device_tracker.fluffy
+    - device_tracker.maritzas_iphone
+    - group.time
+    - group.almanac
+    - group.arlo_base_station
+    - group.1545_climate
+    - group.489_climate
+
+time:
+  name: Time
+  view: no
+  entities:
+    - sensor.zulu_time
+    - sensor.est_time
+    - sensor.pst_time
+
+almanac:
+  name: Almanac
+  view: no
+  entities:
+    - sensor.nextsunrise
+    - sensor.nextsunset
+    - sensor.solarangle
+    - sensor.moon
+    - sensor.dayofyear
+    - sensor.weekofyear
+
+arlo_base_station:
+  name: Arlo
+  view: no
+  entities:
+    - alarm_control_panel.1545_base_station
+
+1545_climate:
+  name: 1545 Climate
+  view: no
+  entities:
+    - sensor.north_nest_thermostat_temperature
+    - sensor.north_nest_thermostat_humidity
+    - sensor.south_nest_thermostat_temperature
+    - sensor.south_nest_thermostat_humidity
+    - climate.north_nest
+    - climate.south_nest
+
+489_climate:
+  name: 489 Climate
+  view: no
+  entities:
+    - sensor.kingsbridge_thermostat_temperature
+    - sensor.kingsbridge_thermostat_humidity
+    - climate.kingsbridge

@@ -1,0 +1,49 @@
+# Add local resources
+
+resources:
+  - url: /local/custom_ui/thermostat-card.js?v=1
+    type: module
+
+title: HAL9000
+views:
+  - title: default_view
+    icon: mdi:home-assistant
+    badges:
+      - device_tracker.daves_iphone
+      - device_tracker.tatis_iphone
+      - device_tracker.stella
+      - device_tracker.fluffy
+      #- device_tracker.maritzas_iphone
+    cards:
+      - type: weather-forecast
+        entity: weather.dark_sky
+      - type: custom:thermostat-card
+        title: North Nest
+        entity: climate.north_nest
+        hvac:
+          states:
+            'Off': 'off'
+            'Cooling': 'cool'
+            'Heating': 'heat'
+          attribute: operation_mode
+        ambient_temperature: sensor.1545_climate_north_nest_ambient_temp
+      - type: custom:thermostat-card
+        title: South Nest
+        entity: climate.south_nest
+        hvac:
+          states:
+            'Off': 'off'
+            'Cooling': 'cool'
+            'Heating': 'heat'
+          attribute: operation_mode
+        ambient_temperature: sensor.1545_climate_south_nest_ambient_temp
+      - type: custom:thermostat-card
+        title: Kingsbridge Nest
+        entity: climate.kingsbridge
+        hvac:
+          states:
+            'Off': 'off'
+            'Cooling': 'cool'
+            'Heating': 'heat'
+          attribute: operation_mode
+        ambient_temperature: sensor.489_climate_kingsbridge_ambient_temp

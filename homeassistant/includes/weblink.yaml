@@ -1,0 +1,25 @@
+############################################################
+##
+## Home Assistant - Weblinks
+##
+#############################################################
+
+entities:
+  - name: Portainer
+    url: https://dui.1545.duckdns.org
+    icon: mdi:docker
+  - name: Grafana
+    url: https://grafana.1545.duckdns.org
+    icon: mdi:graphql
+  - name: NodeRed
+    url: https://nodered.1545.duckdns.org
+    icon: mdi:update
+  - name: Zoneminder
+    url: http://divo.duckdns.org:8043/zm
+    icon: mdi:cctv
+  - name: MythWeb
+    url: https://mythweb.1545.duckdns.org
+    icon: mdi:television-box
+  - name: Cronograf (Local Only)
+    url: http://192.168.1.70:8888
+    icon: mdi:graphql

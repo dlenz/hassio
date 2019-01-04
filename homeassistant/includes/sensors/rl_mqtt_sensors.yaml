@@ -1,0 +1,59 @@
+############################################################
+#
+# Home Assistant - Rocket League MQTT Sensors
+#
+############################################################
+
+- platform: mqtt
+  name: Xbox_RL_stats_overall_wins
+  state_topic: "sensors/Xbox/RL/stats/overall"
+  #unit_of_measurement: ''
+  value_template: '{{ value_json.wins }}'
+
+- platform: mqtt
+  name: Xbox_RL_stats_overall_goals
+  state_topic: "sensors/Xbox/RL/stats/overall"
+  #unit_of_measurement: ''
+  value_template: '{{ value_json.goals }}'
+
+- platform: mqtt
+  name: Xbox_RL_stats_overall_mvps
+  state_topic: "sensors/Xbox/RL/stats/overall"
+  #unit_of_measurement: ''
+  value_template: '{{ value_json.mvps }}'
+
+- platform: mqtt
+  name: Xbox_RL_stats_overall_saves
+  state_topic: "sensors/Xbox/RL/stats/overall"
+  #unit_of_measurement: ''
+  value_template: '{{ value_json.saves }}'
+
+- platform: mqtt
+  name: Xbox_RL_stats_overall_shots
+  state_topic: "sensors/Xbox/RL/stats/overall"
+  #unit_of_measurement: ''
+  value_template: '{{ value_json.shots }}'
+
+- platform: mqtt
+  name: Xbox_RL_stats_standard_season_7_rankPoints
+  state_topic: "sensors/Xbox/RL/stats/standard/season/7"
+  #unit_of_measurement: ''
+  value_template: '{{ value_json.rankPoints }}'
+
+- platform: mqtt
+  name: Xbox_RL_stats_standard_season_7_matchesPlayed
+  state_topic: "sensors/Xbox/RL/stats/standard/season/7"
+  #unit_of_measurement: ''
+  value_template: '{{ value_json.matchesPlayed }}'
+
+- platform: mqtt
+  name: Xbox_RL_stats_standard_season_7_tier
+  state_topic: "sensors/Xbox/RL/stats/standard/season/7"
+  #unit_of_measurement: ''
+  value_template: '{{ value_json.tier }}'
+
+- platform: mqtt
+  name: Xbox_RL_stats_standard_season_7_division
+  state_topic: "sensors/Xbox/RL/stats/standard/season/7"
+  #unit_of_measurement: ''
+  value_template: '{{ value_json.division }}'

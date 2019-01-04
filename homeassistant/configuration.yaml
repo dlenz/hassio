@@ -1,0 +1,150 @@
+####################################################
+#                                                  #
+#                   HA Service            #
+#                                                  #
+####################################################
+
+homeassistant:
+  name: Home
+  latitude: !secret home_lat
+  longitude: !secret home_lon
+  elevation: !secret home_ele
+  unit_system: imperial
+  time_zone: America/New_York
+  customize: !include includes/customize.yaml
+  packages: !include_dir_named includes/packages
+  auth_providers:
+   - type: homeassistant
+   - type: legacy_api_password
+http:
+  api_password: !secret http_password
+#  trusted_networks:
+#    - 127.0.0.1
+#  ip_ban_enabled: true
+#  login_attempts_threshold: 5
+#  base_url: !secret http_url
+#  use_x_forwarded_for: true
+
+####################################################
+#                                                  #
+#                     Enables             #
+#                                                  #
+####################################################
+
+auth:
+config:
+conversation:
+# Disable automatic discovery
+#discovery:
+frontend:
+  javascript_version: latest 
+history:
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - media_player
+  include:
+    domains:
+      - sensor
+      - binary_sensor
+      - switch
+      - climate
+ios:
+logbook:
+#logger:
+#   default: critical
+#   logs:
+#     homeassistant.components: info
+#     homeassistant.components.notify: debug
+map:
+sun:
+  elevation: 2
+
+####################################################
+#                                                  #
+#                    Components            #
+#                                                  #
+####################################################
+
+alarm_control_panel:
+  - platform: arlo
+
+arlo:
+  username: !secret arlo_username
+  password: !secret arlo_password
+
+google:
+  client_id: !secret google_api_client_id
+  client_secret: !secret google_api_client_secret
+
+hassio:
+
+influxdb:
+  #host: 192.168.1.70
+  #port: 3000
+  #database: home_assistant
+  #include:
+  #  - sensors
+
+lovelace:
+  mode: yaml
+
+mqtt:
+  broker: 192.168.1.70
+  port: 1883
+  client_id: home-assistant
+  username: mqtt
+  password: !secret mqtt_password
+
+notify:
+  - name: all
+    platform: group
+    services:
+      - service: ios_daves_iphone
+      - service: ios_tatis_iphone
+#  - platform: pushbullet
+#    name: dave
+#    api_key: !secret pushbullet_api_key
+
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
+
+python_script:
+
+recorder:
+  db_url: mysql://hauser:hapass@192.168.1.42/ha
+
+tts:
+  - platform: google
+
+weather:
+  - platform: darksky
+    api_key: !secret darksky_api_key
+    
+zoneminder:
+  host: !secret zm_host
+  path: !secret zm_path
+  path_zms: !secret zm_path_zms
+  ssl: false
+  username: !secret zm_user
+  password: !secret zm_pass
+
+####################################################
+#                                                  #
+#                     Includes             #
+#                                                  #
+####################################################
+
+#alert: !include_dir_merge_named includes/alert
+#automation: !include_dir_merge_named includes/automation
+automation: !include_dir_merge_list includes/automation
+binary_sensor: !include_dir_merge_list includes/binary_sensors
+camera: !include includes/cameras.yaml
+device_tracker: !include includes/device_trackers.yaml
+group: !include_dir_merge_named includes/groups
+panel_iframe: !include includes/panel_iframe.yaml
+sensor: !include_dir_merge_list includes/sensors
+zone: !include includes/zones.yaml
+weblink: !include includes/weblink.yaml

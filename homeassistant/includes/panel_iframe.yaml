@@ -1,0 +1,14 @@
+############################################################
+#
+# Home Assistant - Panel iFrames
+#
+############################################################
+
+windy:
+  title: 'Windy'
+  url: https://embed.windy.com/embed2.html?lat=26.385&lon=-80.103&zoom=10&level=surface&overlay=wind&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=26.385&detailLon=-80.103&metricWind=default&metricTemp=default
+  icon: mdi:weather-windy
+#darksky:
+#  title: 'Darksky'
+#  icon: mdi:weather-lightning-rainy
+#  url: !secret darksky_url

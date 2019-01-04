@@ -1,0 +1,197 @@
+############################################################
+#
+# Home Assistant - Sensors
+#
+############################################################
+
+- platform: darksky
+  api_key: !secret darksky_api_key
+  forecast:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  monitored_conditions:
+    - summary
+    - icon
+    - precip_probability
+    - temperature
+    - apparent_temperature
+    - wind_speed
+    - wind_bearing
+    - humidity
+    - pressure
+    - visibility
+    - hourly_summary
+    - daily_summary
+    - temperature_high
+    - temperature_low
+    - uv_index  # not currently being used by Lovelace weather card
+# other Dark Sky conditions, none of which are being used by Lovelace weather card
+    #- precip_type
+    #- precip_intensity
+    #- precip_accumulation
+    #- precip_intensity_max
+    #- dew_point
+    #- minutely_summary
+    #- apparent_temperature_high
+    #- apparent_temperature_low
+    #- moon_phase
+    #- nearest_storm_distance
+    #- nearest_storm_bearing
+    #- wind_gust
+    #- cloud_cover
+    #- ozone
+  update_interval:
+    minutes: 5
+
+- platform: nest
+  monitored_conditions:
+    - humidity
+    - operation_mode
+    - temperature
+    - target
+    - hvac_state
+
+- platform: sql
+  db_url: !secret mysql_db_url_ha
+  queries:
+    - name: HA DB size
+      query: 'SELECT table_schema "database", Round(((Sum(data_length + index_length) / 1024) / 1024), 1) "value" FROM information_schema.tables WHERE table_schema="ha" GROUP BY table_schema;'
+      column: 'value'
+      unit_of_measurement: Mb
+
+- platform: sql
+  db_url: !secret mysql_db_url_mythtv
+  queries:
+    - name: MythTV DB size
+      query: 'SELECT table_schema "database", Round(((Sum(data_length + index_length) / 1024) / 1024), 1) "value" FROM information_schema.tables WHERE table_schema="mythconverg" GROUP BY table_schema;'
+      column: 'value'
+      unit_of_measurement: Mb
+
+- platform: sql
+  db_url: !secret mysql_db_url_kodi
+  queries:
+    - name: Kodi DB size
+      query: 'SELECT table_schema "database", Round(((Sum(data_length + index_length) / 1024) / 1024), 1) "value" FROM information_schema.tables WHERE table_schema="MyVideos107" GROUP BY table_schema;'
+      column: 'value'
+      unit_of_measurement: Mb
+
+- platform: sql
+  db_url: !secret mysql_db_url_zm
+  queries:
+    - name: ZM DB size
+      query: 'SELECT table_schema "database", Round(((Sum(data_length + index_length) / 1024) / 1024), 1) "value" FROM information_schema.tables WHERE table_schema="zm" GROUP BY table_schema;'
+      column: 'value'
+      unit_of_measurement: Mb
+
+- platform: systemmonitor
+#    resources:
+#    - type: disk_use_percent
+#      arg: /
+#    - type: memory_free
+
+# Template to 
+- platform: template
+  sensors:
+    kingsbridge_away_mode:
+      value_template: "{{ is_state_attr('climate.kingsbridge', 'away_mode', 'on') }}"
+    north_nest_away_mode:
+      value_template: "{{ is_state_attr('climate.north_nest', 'away_mode', 'on') }}"
+    south_nest_away_mode:
+      value_template: "{{ is_state_attr('climate.south_nest', 'away_mode', 'on') }}"
+
+    solarangle:
+      friendly_name: "Sun Angle"
+      unit_of_measurement: '°'
+      value_template: "{{ '%+.1f'|format(states.sun.sun.attributes.elevation) }}"
+
+    nextsunrise:
+      friendly_name: 'Next Sunrise'
+      value_template: "{{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom('%D %I:%M %p') }}"
+
+    nextsunset:
+      friendly_name: 'Next Sunset'
+      value_template: "{{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom('%D %I:%M %p') }}"
+
+    dayofyear:
+      friendly_name: 'Day Number'
+      value_template: "{{ now().strftime('%j') }}"
+
+    weekofyear:
+      friendly_name: 'Week Number'
+      value_template: "{{ now().strftime('%U') }}" 
+
+#- platform: google_travel_time
+#  api_key: !secret google_time_travel_api_key
+#  origin: !secret home_address
+#  destination: !secret work_address
+
+- platform: worldclock
+  time_zone: Etc/UTC
+  name: Zulu Time
+
+- platform: worldclock
+  time_zone: America/New_York
+  name: EST Time
+
+- platform: worldclock
+  time_zone: America/Los_Angeles
+  name: PST Time
+
+- platform: wunderground
+  api_key: !secret wunderground_api_key
+  monitored_conditions:
+    - alerts
+    - temp_f
+    - dewpoint_f
+    - pressure_in
+    - UV
+    - wind_string
+    - weather
+    - weather_1h
+    - weather_1d
+
+####################################################
+#                                                  #
+#              HOME ASSISTANT UPTIME               #
+#                                                  #
+####################################################
+
+# https://home-assistant.io/components/sensor.command_line/
+- platform: command_line
+  name: "HA Uptime"
+  command: echo "$(($(date +%s) - $(date -d "$(head -n1 /config/home-assistant.log | cut -d' ' -f-2)" +%s)))"
+  scan_interval: 720
+  value_template: >-
+    {% set uptime = value | int %}
+    {% set seconds = uptime % 60 %}
+    {% set minutes = ((uptime % 3600) / 60) | int %}
+    {% set hours = ((uptime % 86400) / 3600) | int %}
+    {% set days = (uptime / 86400) | int %}
+    {%- if days > 0 -%}
+      {%- if days == 1 -%}
+        1 day
+      {%- else -%}
+        {{ days }} days
+      {%- endif -%}
+      {{ ', ' }}
+    {%- endif -%}
+    {{ '%02d' % hours }}:{{ '%02d' % minutes }}
+
+####################################################
+#                                                  #
+#          INTERNET PERFORMANCE METRICS            #
+#                                                  #
+####################################################
+
+# https://home-assistant.io/components/sensor.speedtest/
+- platform: speedtest
+  server_id: 6214
+  monitored_conditions:
+    - download
+    - upload
+    - ping
+  hour:
+    - 3

@@ -1,0 +1,71 @@
+# Define the order of the groups
+group.default_view:
+  order: 1
+group.weather:
+  order: 2
+group.security:
+  order: 3
+group.system_monitor:
+  order: 4
+
+#alarm_control_panel.1545_base_station:
+#  friendly_name: 1545 Base Station
+#  icon: mdi:security
+#sun.sun:
+#  icon: mdi:sun
+#device_tracker.daves_iphone:
+#  friendly_name: Dave
+
+sensor.KBCT_metar_observation_time:
+  friendly_name: KBCT Obs. Time
+sensor.KBCT_metar_temp_c:
+  friendly_name: KBCT Temp.
+sensor.KBCT_metar_dewpoint_c:
+  friendly_name: KBCT Dewpoint
+sensor.KBCT_metar_wind_dir_degrees:
+  friendly_name: KBCT Wind Dir.
+sensor.KBCT_metar_wind_speed_kt:
+  friendly_name: KBCT Wind Speed
+sensor.KBCT_metar_visibility_statute_mi:
+  friendly_name: KBCT Vis.
+sensor.KBCT_metar_altim_in_hg:
+  friendly_name: KBCT Alt.
+sensor.KBCT_metar_wx_string:
+  friendly_name: KBCT Wx
+sensor.KBCT_metar_sky_cover:
+  friendly_name: KBCT Sky Cover
+sensor.KBCT_metar_cloud_base_ft_agl:
+  friendly_name: KBCT Cloud Base
+sensor.KBCT_metar_flight_category:
+  friendly_name: KBCT Flt. Cat.
+sensor.KBCT_metar_metar_type:
+  friendly_name: KBCT Metar Type
+sensor.KBCT_metar_elevation_m:
+  friendly_name: KBCT Ele.
+
+sensor.KOBE_metar_observation_time:
+  friendly_name: KOBE Obs. Time
+sensor.KOBE_metar_temp_c:
+  friendly_name: KOBE Temp.
+sensor.KOBE_metar_dewpoint_c:
+  friendly_name: KOBE Dewpoint
+sensor.KOBE_metar_wind_dir_degrees:
+  friendly_name: KOBE Wind Dir.
+sensor.KOBE_metar_wind_speed_kt:
+  friendly_name: KOBE Wind Speed
+sensor.KOBE_metar_visibility_statute_mi:
+  friendly_name: KOBE Vis.
+sensor.KOBE_metar_altim_in_hg:
+  friendly_name: KOBE Alt.
+sensor.KOBE_metar_wx_string:
+  friendly_name: KOBE Wx
+sensor.KOBE_metar_sky_cover:
+  friendly_name: KOBE Sky Cover
+sensor.KOBE_metar_cloud_base_ft_agl:
+  friendly_name: KOBE Cloud Base
+sensor.KOBE_metar_flight_category:
+  friendly_name: KOBE Flt. Cat.
+sensor.KOBE_metar_metar_type:
+  friendly_name: KOBE Metar Type
+sensor.KOBE_metar_elevation_m:
+  friendly_name: KOBE Ele.

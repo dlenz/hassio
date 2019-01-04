@@ -1,0 +1,59 @@
+############################################################
+#
+# Home Assistant - Nest MQTT Sensors
+#
+############################################################
+
+- platform: mqtt
+  name: 1545_climate_north_nest_ambient_temp
+  state_topic: "sensors/1545/climate/north_nest"
+  unit_of_measurement: '°F'
+  value_template: '{{ value_json.ambient_temperature_f }}'
+
+- platform: mqtt
+  name: 1545_climate_north_nest_target_temp
+  state_topic: "sensors/1545/climate/north_nest"
+  unit_of_measurement: '°F'
+  value_template: '{{ value_json.target_temperature_f }}'
+
+- platform: mqtt
+  name: 1545_climate_north_nest_humidity
+  state_topic: "sensors/1545/climate/north_nest"
+  unit_of_measurement: '%'
+  value_template: '{{ value_json.humidity }}'
+
+- platform: mqtt
+  name: 1545_climate_south_nest_ambient_temp
+  state_topic: "sensors/1545/climate/south_nest"
+  unit_of_measurement: '°F'
+  value_template: '{{ value_json.ambient_temperature_f }}'
+
+- platform: mqtt
+  name: 1545_climate_south_nest_target_temp
+  state_topic: "sensors/1545/climate/south_nest"
+  unit_of_measurement: '°F'
+  value_template: '{{ value_json.target_temperature_f }}'
+
+- platform: mqtt
+  name: 1545_climate_south_nest_humidity
+  state_topic: "sensors/1545/climate/south_nest"
+  unit_of_measurement: '%'
+  value_template: '{{ value_json.humidity }}'
+
+- platform: mqtt
+  name: 489_climate_kingsbridge_ambient_temp
+  state_topic: "sensors/489/climate/kingsbridge"
+  unit_of_measurement: '°F'
+  value_template: '{{ value_json.ambient_temperature_f }}'
+
+- platform: mqtt
+  name: 489_climate_kingsbridge_target_temp
+  state_topic: "sensors/489/climate/kingsbridge"
+  unit_of_measurement: '°F'
+  value_template: '{{ value_json.target_temperature_f }}'
+
+- platform: mqtt
+  name: 489_climate_kingsbridge_humidity
+  state_topic: "sensors/489/climate/kingsbridge"
+  unit_of_measurement: '%'
+  value_template: '{{ value_json.humidity }}'

@@ -1,0 +1,27 @@
+############################################################
+#
+# Home Assistant - Binary Sensors
+#
+############################################################
+
+- platform: nest
+  monitored_conditions:
+    - online
+    - fan
+    - is_using_emergency_heat
+    - is_locked
+    - has_leaf
+
+# Binary sensor for 1545 Internet
+- platform: ping
+  name: 1545_wan_status
+  host: google.com
+  count: 2
+  scan_interval: 60
+
+# Binary sensor for 489 Internet
+- platform: ping
+  name: 489_wan_status
+  host: kingsbridge489.asuscomm.com
+  count: 2
+  scan_interval: 60

@@ -1,0 +1,14 @@
+resources:
+  - url: /local/custom_ui/weather-card.js
+    type: js
+
+title: Home Assistant
+views:
+  - icon: mdi:weather-cloudy
+    id: weather
+    title: Weather
+    garage_door_tilt_sensor_alarm_level: Weather
+    cards:
+      - type: "custom:weather-card"
+        entity_weather: weather.yweather
+        entity_sun: sun.sun

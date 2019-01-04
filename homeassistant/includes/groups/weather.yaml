@@ -1,0 +1,55 @@
+############################################################
+#
+# Home Assistant - Groups - Weather
+#
+############################################################
+
+weather:
+  view: yes
+  icon: mdi:weather-cloudy
+  entities:
+    - group.wunderground
+    - group.weather_card_forecast
+    - group.kbct_metar
+    - group.kobe_metar
+    - group.climate_cameras
+
+wunderground:
+  name: Weather
+  view: no
+  entities:
+    - sensor.pws_weather_1h
+    - sensor.pws_weather_1d
+
+kbct_metar:
+  name: KBCT Metar
+  view: no
+  entities:
+    - sensor.kbct_metar_observation_time
+    - sensor.kbct_metar_temp_c
+    - sensor.kbct_metar_dewpoint_c
+    - sensor.kbct_metar_altim_in_hg
+    - sensor.kbct_metar_wind_dir_degrees
+    - sensor.kbct_metar_wind_speed_kt
+    - sensor.kbct_metar_sky_cover
+    - sensor.kbct_metar_cloud_base_ft_agl
+    - sensor.kbct_metar_flight_category
+
+kobe_metar:
+  name: KOBE Metar
+  view: no
+  entities:
+    - sensor.kobe_metar_observation_time
+    - sensor.kobe_metar_temp_c
+    - sensor.kobe_metar_dewpoint_c
+    - sensor.kobe_metar_altim_in_hg
+    - sensor.kobe_metar_wind_dir_degrees
+    - sensor.kobe_metar_wind_speed_kt
+    - sensor.kobe_metar_sky_cover
+    - sensor.kobe_metar_cloud_base_ft_agl
+    - sensor.kobe_metar_flight_category
+
+climate_cameras:
+    - camera.mia_radar
+    - camera.south_beach_cam_1
+    - camera.south_beach_cam_2

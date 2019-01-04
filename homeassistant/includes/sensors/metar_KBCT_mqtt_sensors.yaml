@@ -1,0 +1,83 @@
+############################################################
+#
+# Home Assistant - Metar MQTT Sensors
+#
+############################################################
+
+- platform: mqtt
+  name: KBCT_metar_observation_time
+  state_topic: "sensors/KBCT/metar"
+  #unit_of_measurement: 'date'
+  value_template: '{{value_json["observation_time"][0]}}'
+  
+- platform: mqtt
+  name: KBCT_metar_temp_c
+  state_topic: "sensors/KBCT/metar"
+  unit_of_measurement: '°C'
+  value_template: '{{value_json["temp_c"][0]}}'
+  
+- platform: mqtt
+  name: KBCT_metar_dewpoint_c
+  state_topic: "sensors/KBCT/metar"
+  unit_of_measurement: '°C'
+  value_template: '{{value_json["dewpoint_c"][0]}}'
+  
+- platform: mqtt
+  name: KBCT_metar_wind_dir_degrees
+  state_topic: "sensors/KBCT/metar"
+  unit_of_measurement: '°'
+  value_template: '{{value_json["wind_dir_degrees"][0]}}'
+  
+- platform: mqtt
+  name: KBCT_metar_wind_speed_kt
+  state_topic: "sensors/KBCT/metar"
+  unit_of_measurement: 'kts'
+  value_template: '{{value_json["wind_speed_kt"][0]}}'
+  
+- platform: mqtt
+  name: KBCT_metar_visibility_statute_mi
+  state_topic: "sensors/KBCT/metar"
+  unit_of_measurement: 'mi'
+  value_template: '{{value_json["visibility_statute_mi"][0]}}'
+  
+- platform: mqtt
+  name: KBCT_metar_altim_in_hg
+  state_topic: "sensors/KBCT/metar"
+  unit_of_measurement: 'hg'
+  value_template: '{{value_json["altim_in_hg"][0]}}'
+  
+- platform: mqtt
+  name: KBCT_metar_wx_string
+  state_topic: "sensors/KBCT/metar"
+  #unit_of_measurement: 'text'
+  value_template: '{{value_json["wx_string"][0]}}'
+  
+- platform: mqtt
+  name: KBCT_metar_sky_cover
+  state_topic: "sensors/KBCT/metar"
+  #unit_of_measurement: 'text'
+  value_template: '{{value_json["sky_condition"][0]["$"]["sky_cover"]}}'
+  
+- platform: mqtt
+  name: KBCT_metar_cloud_base_ft_agl
+  state_topic: "sensors/KBCT/metar"
+  unit_of_measurement: 'ft'
+  value_template: '{{value_json["sky_condition"][0]["$"]["cloud_base_ft_agl"]}}'
+  
+- platform: mqtt
+  name: KBCT_metar_flight_category
+  state_topic: "sensors/KBCT/metar"
+  #unit_of_measurement: 'test'
+  value_template: '{{value_json["flight_category"][0]}}'
+  
+- platform: mqtt
+  name: KBCT_metar_metar_type
+  state_topic: "sensors/KBCT/metar"
+  #unit_of_measurement: 'text'
+  value_template: '{{value_json["metar_type"][0]}}'
+  
+- platform: mqtt
+  name: KBCT_metar_elevation_m
+  state_topic: "sensors/KBCT/metar"
+  unit_of_measurement: 'm'
+  value_template: '{{value_json["elevation_m"][0]}}'

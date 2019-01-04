@@ -1,0 +1,22 @@
+############################################################
+#
+# Home Assistant - Cameras
+#
+############################################################
+
+- platform: arlo
+  ffmpeg_arguments: '-pred 1 -q:v 2'
+
+- platform: zoneminder
+
+- platform: local_file
+  name: South Beach Cam 1
+  file_path: /config/www/pictures/south_beach_latest.jpg
+
+- platform: generic 
+  name: South Beach Cam 2
+  still_image_url: http://icons.wunderground.com/webcamramdisk/z/a/zafer/7/current.jpg
+
+- platform: generic
+  name: MIA Radar
+  still_image_url: https://radblast.wunderground.com/cgi-bin/radar/WUNIDS_map?station=AMX&brand=wui&num=1&delay=15&type=N0R&frame=0&scale=0.5&noclutter=0&showstorms=0&mapx=400&mapy=240&centerx=329.49999999999994&centery=408&transx=-70.50000000000006&transy=168&showlabels=1&severe=0&rainsnow=0&lightning=1&smooth=1&rand=25379716&lat=0&lon=0&label=you

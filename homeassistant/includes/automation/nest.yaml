@@ -1,0 +1,61 @@
+- id: KingsbridgeMotion
+  alias: Kingsbridge Motion Detected
+  trigger:
+    platform: state
+    entity_id: binary_sensor.kingsbridge_away
+    from: 'on'
+    to: 'off'
+  action:
+    service: notify.all
+    data:
+      title: "Kingsbridge Motion"
+      message: "There has been motion detected by the Nest."
+
+- id: KingsbridgeLowTempSet
+  alias: Kingsbridge Low Temp Set
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.489_climate_kingsbridge_target_temp
+    below: 75 
+  action:
+    service: notify.all
+    data:
+      title: "Kingsbridge Low Temp Set"
+      message: "There temperature at Kingsbridge has been set below 75."
+      
+#      data:
+#        push:
+#          category: camera
+#        entity_id: camera.garage_camera
+
+#- alias: KingsbridgeNestAbuse
+#  trigger:
+#    platform: numeric_state
+#    entity_id: sensor.489_climate_kingsbridge_target_temp
+#    below: 73
+#  action:
+#    service: notify.ios_tatis_iphone
+#    data:
+#      title: "Kingsbridge Nest Abuse (Cold)"
+#      message: "The temperature at Kingsbridge is being abused!"
+
+#- alias: 1545NestMotion
+#  trigger:
+#    platform: state
+#    entity_id: sensor.north_nest_away_mode
+#    state: "True"
+#    service: notify.ios_tatis_iphone
+#    data:
+#      title: "Motion detected at 1545"
+#      message: "The Nest has detected motion at 1545"
+
+#- alias: AutomationTest
+#  trigger:
+#    platform: state
+#    entity_id: device_tracker.daves_iphone
+#  action:
+#    service: notify.ios_daves_iphone
+#    data_template:
+#      message: >
+#        Dave just changed from {{ trigger.from_state.state }}
+#        to {{ trigger.to_state.state }}

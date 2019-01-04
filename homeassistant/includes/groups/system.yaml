@@ -1,0 +1,47 @@
+############################################################
+#
+# Home Assistant - Groups - System Monitor
+#
+############################################################
+
+system_monitor:
+  view: yes
+  icon: mdi:server-network
+  entities:
+    - group.ha
+    - group.mysql_dbs
+    - group.wan_health
+    - group.links
+ha:
+  name: Home Assistant
+  view: no
+  entities:
+    - sensor.ha_uptime
+
+mysql_dbs:
+  name: MySQL DBs
+  view: no
+  entities:
+    - sensor.ha_db_size
+    - sensor.mythtv_db_size
+    - sensor.kodi_db_size
+    - sensor.zm_db_size
+
+wan_health:
+  name: WAN Health
+  view: no
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+
+links:
+  name: Rosie
+  view: no
+  entities:
+    - weblink.portainer
+    - weblink.grafana
+    - weblink.nodered
+    - weblink.zoneminder
+    - weblink.mythweb
+    - weblink.cronograf_local_only

@@ -1,0 +1,20 @@
+############################################################
+#
+# Home Assistant - MQTT Binary Sensors
+#
+############################################################
+
+- platform: mqtt
+  name: 1545_climate_north_nest_hvac_state
+  state_topic: "sensors/1545/climate/north_nest"
+  value_template: '{{ value_json.hvac_state }}'
+
+- platform: mqtt
+  name: 1545_climate_south_nest_hvac_state
+  state_topic: "sensors/1545/climate/south_nest"
+  value_template: '{{ value_json.hvac_state }}'
+
+- platform: mqtt
+  name: 489_climate_kingsbridge_hvac_state
+  state_topic: "sensors/489/climate/kingsbridge"
+  value_template: '{{ value_json.hvac_state }}'
