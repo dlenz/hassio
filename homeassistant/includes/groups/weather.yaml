@@ -10,6 +10,7 @@ weather:
   entities:
     - group.kbct_metar
     - group.kobe_metar
+    - group.kmlb_metar    
     - group.climate_cameras
 
 kbct_metar:
@@ -39,6 +40,20 @@ kobe_metar:
     - sensor.kobe_metar_sky_cover
     - sensor.kobe_metar_cloud_base_ft_agl
     - sensor.kobe_metar_flight_category
+
+kmlb_metar:
+  name: KMLB Metar
+  view: no
+  entities:
+    - sensor.kmlb_metar_observation_time
+    - sensor.kmlb_metar_temp_c
+    - sensor.kmlb_metar_dewpoint_c
+    - sensor.kmlb_metar_altim_in_hg
+    - sensor.kmlb_metar_wind_dir_degrees
+    - sensor.kmlb_metar_wind_speed_kt
+    - sensor.kmlb_metar_sky_cover
+    - sensor.kmlb_metar_cloud_base_ft_agl
+    - sensor.kmlb_metar_flight_category
 
 climate_cameras:
     - camera.mia_radar
