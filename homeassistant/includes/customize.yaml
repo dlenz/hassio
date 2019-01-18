@@ -69,3 +69,30 @@ sensor.KOBE_metar_metar_type:
   friendly_name: KOBE Metar Type
 sensor.KOBE_metar_elevation_m:
   friendly_name: KOBE Ele.
+
+sensor.KMLB_metar_observation_time:
+  friendly_name: KMLB Obs. Time
+sensor.KMLB_metar_temp_c:
+  friendly_name: KMLB Temp.
+sensor.KMLB_metar_dewpoint_c:
+  friendly_name: KMLB Dewpoint
+sensor.KMLB_metar_wind_dir_degrees:
+  friendly_name: KMLB Wind Dir.
+sensor.KMLB_metar_wind_speed_kt:
+  friendly_name: KMLB Wind Speed
+sensor.KMLB_metar_visibility_statute_mi:
+  friendly_name: KMLB Vis.
+sensor.KMLB_metar_altim_in_hg:
+  friendly_name: KMLB Alt.
+sensor.KMLB_metar_wx_string:
+  friendly_name: KMLB Wx
+sensor.KMLB_metar_sky_cover:
+  friendly_name: KMLB Sky Cover
+sensor.KMLB_metar_cloud_base_ft_agl:
+  friendly_name: KMLB Cloud Base
+sensor.KMLB_metar_flight_category:
+  friendly_name: KMLB Flt. Cat.
+sensor.KMLB_metar_metar_type:
+  friendly_name: KMLB Metar Type
+sensor.KMLB_metar_elevation_m:
+  friendly_name: KMLB Ele.
