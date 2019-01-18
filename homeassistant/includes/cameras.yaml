@@ -10,12 +10,16 @@
 - platform: zoneminder
 
 - platform: local_file
-  name: South Beach Cam 1
+  name: South Beach Pavillion
   file_path: /config/www/pictures/south_beach_latest.jpg
 
 - platform: generic 
-  name: South Beach Cam 2
-  still_image_url: http://icons.wunderground.com/webcamramdisk/z/a/zafer/7/current.jpg
+  name: South Beach
+  still_image_url: http://lakebocacam.com/image1-0.jpg
+
+- platform: generic 
+  name: Lake Boca
+  still_image_url: http://lakebocacam.com/foscam/SecureImageDisplay.php
 
 - platform: generic
   name: MIA Radar

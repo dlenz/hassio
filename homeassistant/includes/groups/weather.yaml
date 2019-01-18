@@ -57,5 +57,5 @@ kmlb_metar:
 
 climate_cameras:
     - camera.mia_radar
-    - camera.south_beach_cam_1
-    - camera.south_beach_cam_2
+    - camera.south_beach_pavillion
+    - camera.south_beach
