@@ -1,0 +1,14 @@
+- id: get_south_beach_latest
+  alias: Get latest South Beach webcam images
+  trigger:
+    - platform: time_pattern
+      minutes: 45
+  condition:
+    condition: and
+    conditions:
+      - condition: sun
+        before: sunset
+      - condition: sun
+        after: sunrise
+  action:
+    service: shell_command.get_south_beach_latest
