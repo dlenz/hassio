@@ -15,11 +15,7 @@
 
 - platform: generic 
   name: South Beach
-  still_image_url: http://lakebocacam.com/image1-0.jpg
-
-- platform: generic 
-  name: Lake Boca
-  still_image_url: http://lakebocacam.com/foscam/SecureImageDisplay.php
+  still_image_url: http://icons.wunderground.com/webcamramdisk/z/a/zafer/7/current.jpg
 
 - platform: generic
   name: MIA Radar
