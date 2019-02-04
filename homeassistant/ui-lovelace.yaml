@@ -26,7 +26,7 @@ views:
         entity: weather.dark_sky
 
   - title: climate
-    icon: mdi:nest-thermostat
+    icon: mdi:thermostat
     cards:
       - type: custom:thermostat-card
         title: North Nest
@@ -65,7 +65,59 @@ views:
       - type: iframe
         url: https://embed.windy.com/embed2.html?lat=26.378&lon=-80.107&zoom=5&level=surface&overlay=wind&menu=&message=&marker=true&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=26.348&detailLon=-80.110&metricWind=default&metricTemp=default&radarRange=-1
         aspect_ratio: 100%
-        
+      - type: picture-entity
+        entity: camera.mia_radar
+        show_info: false
+      - type: picture-entity
+        entity: camera.south_beach_pavillion
+        show_info: false        
+      - type: picture-entity
+        entity: camera.south_beach_south
+        show_info: false      
+      - type: picture-entity
+        entity: camera.south_beach
+        show_info: false
+
+  - title: METARs
+    icon: mdi:airplane
+    cards:
+      - type: glance
+        title: KBCT
+        entities:
+            - sensor.kbct_metar_observation_time
+            - sensor.kbct_metar_temp_c
+            - sensor.kbct_metar_dewpoint_c
+            - sensor.kbct_metar_altim_in_hg
+            - sensor.kbct_metar_wind_dir_degrees
+            - sensor.kbct_metar_wind_speed_kt
+            - sensor.kbct_metar_sky_cover
+            - sensor.kbct_metar_cloud_base_ft_agl
+            - sensor.kbct_metar_flight_category
+      - type: glance
+        title: KOBE
+        entities:
+            - sensor.kobe_metar_observation_time
+            - sensor.kobe_metar_temp_c
+            - sensor.kobe_metar_dewpoint_c
+            - sensor.kobe_metar_altim_in_hg
+            - sensor.kobe_metar_wind_dir_degrees
+            - sensor.kobe_metar_wind_speed_kt
+            - sensor.kobe_metar_sky_cover
+            - sensor.kobe_metar_cloud_base_ft_agl
+            - sensor.kobe_metar_flight_category
+      - type: glance
+        title: KMLB
+        entities:
+            - sensor.kmlb_metar_observation_time
+            - sensor.kmlb_metar_temp_c
+            - sensor.kmlb_metar_dewpoint_c
+            - sensor.kmlb_metar_altim_in_hg
+            - sensor.kmlb_metar_wind_dir_degrees
+            - sensor.kmlb_metar_wind_speed_kt
+            - sensor.kmlb_metar_sky_cover
+            - sensor.kmlb_metar_cloud_base_ft_agl
+            - sensor.kmlb_metar_flight_category            
+
   - title: security
     icon: mdi:cctv
     cards:
