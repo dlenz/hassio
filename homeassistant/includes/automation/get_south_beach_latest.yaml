@@ -1,8 +1,8 @@
 - id: get_south_beach_latest
-  alias: Get latest South Beach webcam images
+  alias: 'Get latest South Beach webcam images'
   trigger:
-    - platform: time_pattern
-      minutes: 45
+    platform: time_pattern
+    minutes: 45
   condition:
     condition: and
     conditions:
