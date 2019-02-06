@@ -117,7 +117,7 @@ recorder:
   db_url: mysql://hauser:hapass@192.168.1.42/ha
 
 shell_command:
-  get_south_beach_latest: 'python_scripts/get_south_beach_latest.py'
+  get_south_beach_latest: '/config/python_scripts/get_south_beach_latest.py'
 
 tts:
   - platform: google
