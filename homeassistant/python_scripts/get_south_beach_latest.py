@@ -15,7 +15,7 @@ complete_pavillion_url = base_url + pavillion_url
 beach_url = latest['s8']['hr']
 complete_beach_url = base_url + beach_url
 
-with open('../www/images/south_beach_latest_pavillion.jpg', 'wb') as handle:
+with open('/opt/docker/hassio/homeassistant/www/images/south_beach_latest_pavillion.jpg', 'wb') as handle:
         response = requests.get(complete_pavillion_url, stream=True)
 
         if not response.ok:
@@ -27,7 +27,7 @@ with open('../www/images/south_beach_latest_pavillion.jpg', 'wb') as handle:
 
             handle.write(block)
 
-with open('../www/images/south_beach_latest_beach.jpg', 'wb') as handle:
+with open('/opt/docker/hassio/homeassistant/www/images/south_beach_latest_beach.jpg', 'wb') as handle:
         response = requests.get(complete_beach_url, stream=True)
 
         if not response.ok:
