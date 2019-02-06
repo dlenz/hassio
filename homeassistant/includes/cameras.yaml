@@ -11,11 +11,11 @@
 
 - platform: local_file
   name: South Beach Pavillion
-  file_path: /config/www/pictures/south_beach_latest_pavillion.jpg
+  file_path: /config/www/images/south_beach_latest_pavillion.jpg
 
 - platform: local_file
   name: South Beach South
-  file_path: /config/www/pictures/south_beach_latest_beach.jpg
+  file_path: /config/www/images/south_beach_latest_beach.jpg
 
 - platform: generic 
   name: South Beach
